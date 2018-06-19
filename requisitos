@@ -1,0 +1,51 @@
+Listas de compras
+
+====================
+Requisitos:
+- Criar lista
+	Deve-se permitir criar mais de uma lista
+    A lista deve ter um nome alfanumerico e começar com caracteres alfabeticos
+    Nomes de lista não podem ser repetidos
+- Excluir lista
+- Cadastrar produto
+    O produto tem nome e valor
+    O nome do produto só pode ter caracteres alfabeticos
+    Valor deve ser monetário com 2 casas decimais
+    Nomes de produtos nao podem ser repetidos
+- Incluir produto na lista
+    Ao incluir o produto deve especificar a quantidade e validade minima.
+    A quantidade deve ser maior que zero
+    Validade minima deve ser uma data maior que o dia de hoje
+    Avisar quando valor da lista superar um multiplo de $100
+    Se um produto for incluído mais de uma vez, aumentar a quantidade
+- Excluir produto
+	A exclusão é de um produto por vez
+
+====================
+Casos de teste:
+- Criar lista
+ok	verificar se o nome da lista é válido
+ok	verificar se a lista já existe com o nome escolhido
+- Excluir lista
+ok  verificar sucesso da exclusão de lista existente
+ok  verificar erro na tentativa de exclusão de lista inexistente
+- Cadastrar produto
+ok	verificar se o produto tem um nome
+ok	verificar se o nome do produto é válido (só pode ter caracteres alfabeticos)
+ok	verificar se o produto tem valor
+ok	verificar se o valor do produto é monetário
+ok	Verificar se produto já existe na relação
+- Excluir Produto
+ok	verificar sucesso da exclusão de produto existente
+ok	verificar erro na tentativa de exclusão de produto inexistente
+- Incluir produto na lista
+ok	verificar se o produto tem quantidade especificada
+ok	verificar se a quantidade é maior que zero
+ok	verificar se a quantidade é um valor numérico inteiro
+ok	Verificar se a validade do produto é uma data válida
+ok	Checar se a validade mínima informada é respeitada (D+1)
+ok	Verificar se a lista superou um valor múltiplo de $100
+n	Verificar quando produto incluído já existe na lista
+- Excluir produto da lista
+ok	Verificar se, ao excluir produto e a quantidade é maior que 1, somente diminui a quantidade
+ok	Verificar se, ao excluir produto e a quantidade é igual a 1 remove o produto da lista
